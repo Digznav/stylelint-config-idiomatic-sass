@@ -1,0 +1,19 @@
+sudo: false
+
+language: node_js
+
+# cache node modules
+cache:
+  directories:
+    - $HOME/.npm
+    - node_modules
+
+node_js:
+  - '7'
+  - '6'
+  - '4'
+
+before_install:
+  - npm install -g npm@latest
+  # remove outdated deps, assists with cache maintenance
+  - npm prune
