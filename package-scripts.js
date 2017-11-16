@@ -31,6 +31,6 @@ module.exports = {
 
     link: serialize(serialize.nps('js.lint.strict'), 'npm link'),
 
-    bump: serialize(serialize.nps('js.lint.strict'), 'node scripts/bump.js', 'npm publish')
+    bump: serialize(serialize.nps('js.lint.strict'), 'npm publish')
   }
 };
