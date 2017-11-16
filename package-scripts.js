@@ -1,4 +1,4 @@
-const npsUtils = require('nps-utils');
+const npsUtils = require('nps-utils'); // eslint-disable-line import/no-extraneous-dependencies
 
 const serialize = npsUtils.series;
 
@@ -10,7 +10,7 @@ const localBins = {
 
 module.exports = {
   scripts: {
-    test: 'echo "Error: no test specified" && exit 1',
+    test: 'node test.js',
 
     js: {
       format: `${localBins.prettier} --single-quote --print-width=140 --parser=flow "**/*.js"`,

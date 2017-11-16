@@ -1,18 +1,65 @@
-const positioning = [
-  'position',
-  'z-index',
-  'top',
-  'right',
-  'bottom',
-  'left'
-];
+function prefix(property, ...prefixes) {
+  return [property, ...prefixes.map(pfx => `${pfx}-${property}`)];
+}
 
-const visibility = [
-  'display',
-  'visibility',
-  'opacity'
-];
+const positioning = ['position', 'z-index', 'top', 'right', 'bottom', 'left', 'float', 'clear'];
 
+const display = ['display', 'visibility', 'opacity'];
+
+const boxModel = [
+  'overflow',
+  'overflow-x',
+  'overflow-y',
+  'box-sizing',
+  ...prefix('width', 'min', 'max'),
+  ...prefix('height', 'min', 'max'),
+  'padding',
+  'padding-top',
+  'padding-right',
+  'padding-bottom',
+  'padding-left',
+  'border',
+  'border-width',
+  'border-style',
+  'border-color',
+  'border-top',
+  'border-top-width',
+  'border-top-style',
+  'border-top-color',
+  'border-right',
+  'border-right-width',
+  'border-right-style',
+  'border-right-color',
+  'border-bottom',
+  'border-bottom-width',
+  'border-bottom-style',
+  'border-bottom-color',
+  'border-left',
+  'border-left-width',
+  'border-left-style',
+  'border-left-color',
+  'border-radius',
+  'border-top-left-radius',
+  'border-top-right-radius',
+  'border-bottom-right-radius',
+  'border-bottom-left-radius',
+  'border-image',
+  'border-image-source',
+  'border-image-slice',
+  'border-image-width',
+  'border-image-outset',
+  'border-image-repeat',
+  'margin',
+  'margin-top',
+  'margin-right',
+  'margin-bottom',
+  'margin-left',
+  'outline',
+  'outline-width',
+  'outline-style',
+  'outline-color',
+  'outline-offset'
+];
 
 const grid = {
   parent: [
@@ -27,11 +74,10 @@ const grid = {
     'grid-auto-rows',
     'grid-auto-columns',
     'grid-auto-flow'
-    // 'justify-items'
+    // justify-items
     // align-items
     // justify-content
     // align-content
-
   ],
   children: [
     'grid-area',
@@ -41,6 +87,8 @@ const grid = {
     'grid-column',
     'grid-column-start',
     'grid-column-end'
+    // justify-self
+    // align-self
   ]
 };
 
@@ -69,10 +117,9 @@ module.exports = {
     'order/properties-order': [
       [
         ...positioning,
-        ...visibility,
+        ...display,
         ...grid.parent,
         ...grid.children,
-        'justify-self',
         'flex-direction',
         'flex-wrap',
         'flex-flow',
@@ -85,64 +132,7 @@ module.exports = {
         'flex-shrink',
         'flex-basis',
         'align-self',
-        'float',
-        'clear',
-        'box-sizing',
-        'overflow',
-        'overflow-x',
-        'overflow-y',
-        'width',
-        'min-width',
-        'max-width',
-        'height',
-        'min-height',
-        'max-height',
-        'padding',
-        'padding-top',
-        'padding-right',
-        'padding-bottom',
-        'padding-left',
-        'border',
-        'border-width',
-        'border-style',
-        'border-color',
-        'border-top',
-        'border-top-width',
-        'border-top-style',
-        'border-top-color',
-        'border-right',
-        'border-right-width',
-        'border-right-style',
-        'border-right-color',
-        'border-bottom',
-        'border-bottom-width',
-        'border-bottom-style',
-        'border-bottom-color',
-        'border-left',
-        'border-left-width',
-        'border-left-style',
-        'border-left-color',
-        'border-radius',
-        'border-top-left-radius',
-        'border-top-right-radius',
-        'border-bottom-right-radius',
-        'border-bottom-left-radius',
-        'border-image',
-        'border-image-source',
-        'border-image-slice',
-        'border-image-width',
-        'border-image-outset',
-        'border-image-repeat',
-        'margin',
-        'margin-top',
-        'margin-right',
-        'margin-bottom',
-        'margin-left',
-        'outline',
-        'outline-width',
-        'outline-style',
-        'outline-color',
-        'outline-offset',
+        ...boxModel,
         'background',
         'background-color',
         'background-image',

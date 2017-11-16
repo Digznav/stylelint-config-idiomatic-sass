@@ -14,6 +14,5 @@ node_js:
   - '4'
 
 before_install:
-  - npm install -g npm@latest
   # remove outdated deps, assists with cache maintenance
   - npm prune
