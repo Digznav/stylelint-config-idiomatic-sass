@@ -1,50 +1,3 @@
-const positioning = [
-  'position',
-  'z-index',
-  'top',
-  'right',
-  'bottom',
-  'left'
-];
-
-const visibility = [
-  'display',
-  'visibility',
-  'opacity'
-];
-
-
-const grid = {
-  parent: [
-    'grid',
-    'grid-template',
-    'grid-template-rows',
-    'grid-template-columns',
-    'grid-template-areas',
-    'grid-gap',
-    'grid-row-gap',
-    'grid-column-gap',
-    'grid-auto-rows',
-    'grid-auto-columns',
-    'grid-auto-flow'
-
-    // justify-items
-    // align-items
-    // justify-content
-    // align-content
-
-  ],
-  children: [
-    'grid-area',
-    'grid-row',
-    'grid-row-start',
-    'grid-row-end',
-    'grid-column',
-    'grid-column-start',
-    'grid-column-end'
-  ]
-};
-
 module.exports = {
   extends: 'stylelint-config-sass-guidelines',
   rules: {
@@ -69,10 +22,34 @@ module.exports = {
     'order/properties-alphabetical-order': null,
     'order/properties-order': [
       [
-        ...positioning,
-        ...visibility,
-        ...grid.parent,
-        ...grid.children,
+        'position',
+        'z-index',
+        'top',
+        'right',
+        'bottom',
+        'left',
+        'display',
+        'visibility',
+        'opacity',
+        'grid',
+        'grid-template',
+        'grid-template-rows',
+        'grid-template-columns',
+        'grid-template-areas',
+        'grid-gap',
+        'grid-row-gap',
+        'grid-column-gap',
+        'grid-auto-rows',
+        'grid-auto-columns',
+        'grid-auto-flow',
+        'justify-items',
+        'grid-area',
+        'grid-row',
+        'grid-row-start',
+        'grid-row-end',
+        'grid-column',
+        'grid-column-start',
+        'grid-column-end',
         'justify-self',
         'flex-direction',
         'flex-wrap',
