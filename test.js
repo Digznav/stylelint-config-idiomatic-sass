@@ -113,3 +113,21 @@ const grid = {
 
 console.log('Grid parent: ', gridRaw.parent.join(' ') === grid.parent.join(' '));
 console.log('Grid children: ', gridRaw.children.join(' ') === grid.children.join(' '));
+
+const result1 = $.cssProperty.prefix.get('width', 'min', 'max');
+const result2 = $.cssProperty.prefix.all('width', 'min', 'max');
+const result3 = $.cssProperty.midfix.get('width', 'top-left', 'top-right');
+const result4 = $.cssProperty.midfix.all('width', 'top-left', 'top-right');
+const result5 = $.cssProperty.midfix.get('border-radius', 'top-left', 'top-right', 'bottom-right', 'bottom-left');
+const result6 = $.cssProperty.midfix.all('border-radius', 'top-left', 'top-right', 'bottom-right', 'bottom-left');
+const result7 = $.cssProperty.suffix.get('grid-gap', 'row', 'column');
+const result8 = $.cssProperty.suffix.all('grid-gap', 'row', 'column');
+
+console.log(result1);
+console.log(result2);
+console.log(result3);
+console.log(result4);
+console.log(result5);
+console.log(result6);
+console.log(result7);
+console.log(result8);
