@@ -1,65 +1,30 @@
-function prefix(property, ...prefixes) {
-  return [property, ...prefixes.map(pfx => `${pfx}-${property}`)];
-}
+const $ = require('./helpers');
 
-const positioning = ['position', 'z-index', 'top', 'right', 'bottom', 'left', 'float', 'clear'];
+const positioning = ['position', 'z-index', ...$.trbl(), 'float', 'clear'];
 
 const display = ['display', 'visibility', 'opacity'];
 
 const boxModel = [
-  'overflow',
-  'overflow-x',
-  'overflow-y',
+  ...$.suffix('overflow', 'x', 'y'),
   'box-sizing',
-  ...prefix('width', 'min', 'max'),
-  ...prefix('height', 'min', 'max'),
-  'padding',
-  'padding-top',
-  'padding-right',
-  'padding-bottom',
-  'padding-left',
-  'border',
-  'border-width',
-  'border-style',
-  'border-color',
-  'border-top',
-  'border-top-width',
-  'border-top-style',
-  'border-top-color',
-  'border-right',
-  'border-right-width',
-  'border-right-style',
-  'border-right-color',
-  'border-bottom',
-  'border-bottom-width',
-  'border-bottom-style',
-  'border-bottom-color',
-  'border-left',
-  'border-left-width',
-  'border-left-style',
-  'border-left-color',
-  'border-radius',
-  'border-top-left-radius',
-  'border-top-right-radius',
-  'border-bottom-right-radius',
-  'border-bottom-left-radius',
-  'border-image',
-  'border-image-source',
-  'border-image-slice',
-  'border-image-width',
-  'border-image-outset',
-  'border-image-repeat',
-  'margin',
-  'margin-top',
-  'margin-right',
-  'margin-bottom',
-  'margin-left',
-  'outline',
-  'outline-width',
-  'outline-style',
-  'outline-color',
-  'outline-offset'
+  ...$.prefix('width', 'min', 'max'),
+  ...$.prefix('height', 'min', 'max'),
+  ...$.trbl('padding'),
+  ...$.border(),
+  ...$.midfix('border-radius', 'top-left', 'top-right', 'bottom-right', 'bottom-left'),
+  ...$.suffix('border-image', 'source', 'slice', 'width', 'outset', 'repeat'),
+  ...$.trbl('margin'),
+  ...$.suffix('outline', 'width', 'style', 'color', 'offset')
 ];
+
+// Parent
+//   justify-items
+//   align-items
+//   justify-content
+//   align-content
+// Children
+//   justify-self
+//   align-self
 
 const grid = {
   parent: [
@@ -74,10 +39,6 @@ const grid = {
     'grid-auto-rows',
     'grid-auto-columns',
     'grid-auto-flow'
-    // justify-items
-    // align-items
-    // justify-content
-    // align-content
   ],
   children: [
     'grid-area',
@@ -87,8 +48,6 @@ const grid = {
     'grid-column',
     'grid-column-start',
     'grid-column-end'
-    // justify-self
-    // align-self
   ]
 };
 
