@@ -1,20 +1,20 @@
-const $ = require('./helpers');
+const css = require('./helpers');
 
-const positioning = ['position', 'z-index', ...$.trbl(), 'float', 'clear'];
+const positioning = ['position', 'z-index', ...css.trbl(), 'float', 'clear'];
 
 const display = ['display', 'visibility', 'opacity'];
 
 const boxModel = [
-  ...$.suffix('overflow', 'x', 'y'),
+  ...css.suffix.all('overflow', 'x', 'y'),
   'box-sizing',
-  ...$.prefix('width', 'min', 'max'),
-  ...$.prefix('height', 'min', 'max'),
-  ...$.trbl('padding'),
-  ...$.border(),
-  ...$.midfix('border-radius', 'top-left', 'top-right', 'bottom-right', 'bottom-left'),
-  ...$.suffix('border-image', 'source', 'slice', 'width', 'outset', 'repeat'),
-  ...$.trbl('margin'),
-  ...$.suffix('outline', 'width', 'style', 'color', 'offset')
+  ...css.prefix.all('width', 'min', 'max'),
+  ...css.prefix.all('height', 'min', 'max'),
+  ...css.trbl('padding'),
+  ...css.border(),
+  ...css.midfix.all('border-radius', 'top-left', 'top-right', 'bottom-right', 'bottom-left'),
+  ...css.suffix.all('border-image', 'source', 'slice', 'width', 'outset', 'repeat'),
+  ...css.trbl('margin'),
+  ...css.suffix.all('outline', 'width', 'style', 'color', 'offset')
 ];
 
 // Parent
@@ -29,18 +29,11 @@ const boxModel = [
 const grid = {
   parent: [
     'grid',
-    'grid-template',
-    'grid-template-rows',
-    'grid-template-columns',
-    'grid-template-areas',
-    'grid-gap',
-    'grid-row-gap',
-    'grid-column-gap',
-    'grid-auto-rows',
-    'grid-auto-columns',
-    'grid-auto-flow'
+    ...css.suffix.all('grid-template', 'rows', 'columns', 'areas'),
+    ...css.midfix.all('grid-gap', 'row', 'column'),
+    ...css.suffix.get('grid-auto', 'rows', 'columns', 'flow')
   ],
-  children: ['grid-area', 'grid-row', 'grid-row-start', 'grid-row-end', 'grid-column', 'grid-column-start', 'grid-column-end']
+  children: ['grid-area', ...css.suffix.all('grid-row', 'start', 'end'), ...css.suffix.all('grid-column', 'start', 'end')]
 };
 
 module.exports = {

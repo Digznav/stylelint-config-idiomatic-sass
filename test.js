@@ -1,10 +1,10 @@
 /* eslint-disable no-console */
 
-const $ = require('./helpers');
+const css = require('./helpers');
 
 const positioningRaw = ['position', 'z-index', 'top', 'right', 'bottom', 'left', 'float', 'clear'];
 
-const positioning = ['position', 'z-index', ...$.trbl(), 'float', 'clear'];
+const positioning = ['position', 'z-index', ...css.trbl(), 'float', 'clear'];
 
 console.log('Positioning: ', positioningRaw.join(' ') === positioning.join(' '));
 
@@ -68,16 +68,16 @@ const boxModelRaw = [
 ];
 
 const boxModel = [
-  ...$.suffix('overflow', 'x', 'y'),
+  ...css.suffix.all('overflow', 'x', 'y'),
   'box-sizing',
-  ...$.prefix('width', 'min', 'max'),
-  ...$.prefix('height', 'min', 'max'),
-  ...$.trbl('padding'),
-  ...$.border(),
-  ...$.midfix('border-radius', 'top-left', 'top-right', 'bottom-right', 'bottom-left'),
-  ...$.suffix('border-image', 'source', 'slice', 'width', 'outset', 'repeat'),
-  ...$.trbl('margin'),
-  ...$.suffix('outline', 'width', 'style', 'color', 'offset')
+  ...css.prefix.all('width', 'min', 'max'),
+  ...css.prefix.all('height', 'min', 'max'),
+  ...css.trbl('padding'),
+  ...css.border(),
+  ...css.midfix.all('border-radius', 'top-left', 'top-right', 'bottom-right', 'bottom-left'),
+  ...css.suffix.all('border-image', 'source', 'slice', 'width', 'outset', 'repeat'),
+  ...css.trbl('margin'),
+  ...css.suffix.all('outline', 'width', 'style', 'color', 'offset')
 ];
 
 console.log('Box model: ', boxModelRaw.join(' ') === boxModel.join(' '));
@@ -102,32 +102,12 @@ const gridRaw = {
 const grid = {
   parent: [
     'grid',
-    ...$.suffix('grid-template', 'rows', 'columns', 'areas'),
-    ...$.midfix('grid-gap', 'row', 'column'),
-    'grid-auto-rows',
-    'grid-auto-columns',
-    'grid-auto-flow'
+    ...css.suffix.all('grid-template', 'rows', 'columns', 'areas'),
+    ...css.midfix.all('grid-gap', 'row', 'column'),
+    ...css.suffix.get('grid-auto', 'rows', 'columns', 'flow')
   ],
-  children: ['grid-area', ...$.suffix('grid-row', 'start', 'end'), ...$.suffix('grid-column', 'start', 'end')]
+  children: ['grid-area', ...css.suffix.all('grid-row', 'start', 'end'), ...css.suffix.all('grid-column', 'start', 'end')]
 };
 
 console.log('Grid parent: ', gridRaw.parent.join(' ') === grid.parent.join(' '));
 console.log('Grid children: ', gridRaw.children.join(' ') === grid.children.join(' '));
-
-const result1 = $.cssProperty.prefix.get('width', 'min', 'max');
-const result2 = $.cssProperty.prefix.all('width', 'min', 'max');
-const result3 = $.cssProperty.midfix.get('width', 'top-left', 'top-right');
-const result4 = $.cssProperty.midfix.all('width', 'top-left', 'top-right');
-const result5 = $.cssProperty.midfix.get('border-radius', 'top-left', 'top-right', 'bottom-right', 'bottom-left');
-const result6 = $.cssProperty.midfix.all('border-radius', 'top-left', 'top-right', 'bottom-right', 'bottom-left');
-const result7 = $.cssProperty.suffix.get('grid-gap', 'row', 'column');
-const result8 = $.cssProperty.suffix.all('grid-gap', 'row', 'column');
-
-console.log(result1);
-console.log(result2);
-console.log(result3);
-console.log(result4);
-console.log(result5);
-console.log(result6);
-console.log(result7);
-console.log(result8);
