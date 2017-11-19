@@ -40,15 +40,7 @@ const grid = {
     'grid-auto-columns',
     'grid-auto-flow'
   ],
-  children: [
-    'grid-area',
-    'grid-row',
-    'grid-row-start',
-    'grid-row-end',
-    'grid-column',
-    'grid-column-start',
-    'grid-column-end'
-  ]
+  children: ['grid-area', 'grid-row', 'grid-row-start', 'grid-row-end', 'grid-column', 'grid-column-start', 'grid-column-end']
 };
 
 module.exports = {

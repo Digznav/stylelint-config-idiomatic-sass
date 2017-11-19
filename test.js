@@ -96,15 +96,7 @@ const gridRaw = {
     'grid-auto-columns',
     'grid-auto-flow'
   ],
-  children: [
-    'grid-area',
-    'grid-row',
-    'grid-row-start',
-    'grid-row-end',
-    'grid-column',
-    'grid-column-start',
-    'grid-column-end'
-  ]
+  children: ['grid-area', 'grid-row', 'grid-row-start', 'grid-row-end', 'grid-column', 'grid-column-start', 'grid-column-end']
 };
 
 const grid = {
@@ -116,11 +108,7 @@ const grid = {
     'grid-auto-columns',
     'grid-auto-flow'
   ],
-  children: [
-    'grid-area',
-    ...$.suffix('grid-row', 'start', 'end'),
-    ...$.suffix('grid-column', 'start', 'end')
-  ]
+  children: ['grid-area', ...$.suffix('grid-row', 'start', 'end'), ...$.suffix('grid-column', 'start', 'end')]
 };
 
 console.log('Grid parent: ', gridRaw.parent.join(' ') === grid.parent.join(' '));
