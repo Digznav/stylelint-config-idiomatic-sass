@@ -1,18 +1,8 @@
 const css = require('./helpers');
 
-const positioning = [
-  'position',
-  'z-index',
-  ...css.trbl(),
-  'float',
-  'clear'
-];
+const positioning = ['position', 'z-index', ...css.trbl(), 'float', 'clear'];
 
-const display = [
-  'display',
-  'visibility',
-  'opacity'
-];
+const display = ['display', 'visibility', 'opacity'];
 
 const boxModel = [
   ...css.suffix.all('overflow', 'x', 'y'),
@@ -34,26 +24,16 @@ const grid = {
     ...css.midfix.all('grid-gap', 'row', 'column'),
     ...css.suffix.get('grid-auto', 'rows', 'columns', 'flow')
   ],
-  children: [
-    'grid-area',
-    ...css.suffix.all('grid-row', 'start', 'end'),
-    ...css.suffix.all('grid-column', 'start', 'end')
-  ]
+  children: ['grid-area', ...css.suffix.all('grid-row', 'start', 'end'), ...css.suffix.all('grid-column', 'start', 'end')]
 };
 
 const flexbox = {
   parent: css.suffix.get('flex', 'flow', 'direction', 'wrap'),
-  children: [
-    'order',
-    ...css.suffix.all('flex', 'grow', 'shrink', 'basis'),
-  ]
+  children: ['order', ...css.suffix.all('flex', 'grow', 'shrink', 'basis')]
 };
 
 const gridFlexShared = {
-  parent: [
-    ...css.suffix.get('justify', 'items', 'content'),
-    ...css.suffix.get('align', 'items', 'content')
-  ],
+  parent: [...css.suffix.get('justify', 'items', 'content'), ...css.suffix.get('align', 'items', 'content')],
   children: css.prefix.get('self', 'justify', 'align')
 };
 
@@ -64,4 +44,4 @@ module.exports = {
   grid,
   flexbox,
   gridFlexShared
-}
+};

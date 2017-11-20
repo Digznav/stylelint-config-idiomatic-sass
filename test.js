@@ -5,16 +5,7 @@ const { positioning, boxModel, grid, flexbox, gridFlexShared } = require('./css-
 describe('CSS', () => {
   describe('Positioning', () => {
     it('should have the same css properties', () => {
-      const positioningExpected = [
-        'position',
-        'z-index',
-        'top',
-        'right',
-        'bottom',
-        'left',
-        'float',
-        'clear'
-      ];
+      const positioningExpected = ['position', 'z-index', 'top', 'right', 'bottom', 'left', 'float', 'clear'];
 
       assert.deepEqual(positioningExpected, positioning);
     });
@@ -101,15 +92,7 @@ describe('CSS', () => {
           'grid-auto-columns',
           'grid-auto-flow'
         ],
-        children: [
-          'grid-area',
-          'grid-row',
-          'grid-row-start',
-          'grid-row-end',
-          'grid-column',
-          'grid-column-start',
-          'grid-column-end'
-        ]
+        children: ['grid-area', 'grid-row', 'grid-row-start', 'grid-row-end', 'grid-column', 'grid-column-start', 'grid-column-end']
       };
 
       assert.deepEqual(gridExpected, grid);
@@ -119,18 +102,8 @@ describe('CSS', () => {
   describe('Flexbox', () => {
     it('should have the same css properties', () => {
       const flexboxExpected = {
-        parent: [
-          'flex-flow',
-          'flex-direction',
-          'flex-wrap'
-        ],
-        children: [
-          'order',
-          'flex',
-          'flex-grow',
-          'flex-shrink',
-          'flex-basis',
-        ]
+        parent: ['flex-flow', 'flex-direction', 'flex-wrap'],
+        children: ['order', 'flex', 'flex-grow', 'flex-shrink', 'flex-basis']
       };
 
       assert.deepEqual(flexboxExpected, flexbox);
@@ -140,19 +113,11 @@ describe('CSS', () => {
   describe('Shared properties for Grid and Flexbox', () => {
     it('should have the same css properties', () => {
       const gridFlexSharedExpected = {
-        parent: [
-          'justify-items',
-          'justify-content',
-          'align-items',
-          'align-content'
-        ],
-        children: [
-          'justify-self',
-          'align-self'
-        ]
+        parent: ['justify-items', 'justify-content', 'align-items', 'align-content'],
+        children: ['justify-self', 'align-self']
       };
 
       assert.deepEqual(gridFlexSharedExpected, gridFlexShared);
-    })
+    });
   });
 });
