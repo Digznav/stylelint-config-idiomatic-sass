@@ -1,40 +1,3 @@
-const css = require('./helpers');
-
-const positioning = ['position', 'z-index', ...css.trbl(), 'float', 'clear'];
-
-const display = ['display', 'visibility', 'opacity'];
-
-const boxModel = [
-  ...css.suffix.all('overflow', 'x', 'y'),
-  'box-sizing',
-  ...css.prefix.all('width', 'min', 'max'),
-  ...css.prefix.all('height', 'min', 'max'),
-  ...css.trbl('padding'),
-  ...css.border(),
-  ...css.midfix.all('border-radius', 'top-left', 'top-right', 'bottom-right', 'bottom-left'),
-  ...css.suffix.all('border-image', 'source', 'slice', 'width', 'outset', 'repeat'),
-  ...css.trbl('margin'),
-  ...css.suffix.all('outline', 'width', 'style', 'color', 'offset')
-];
-
-// Parent
-//   justify-items
-//   align-items
-//   justify-content
-//   align-content
-// Children
-//   justify-self
-//   align-self
-
-const grid = {
-  parent: [
-    'grid',
-    ...css.suffix.all('grid-template', 'rows', 'columns', 'areas'),
-    ...css.midfix.all('grid-gap', 'row', 'column'),
-    ...css.suffix.get('grid-auto', 'rows', 'columns', 'flow')
-  ],
-  children: ['grid-area', ...css.suffix.all('grid-row', 'start', 'end'), ...css.suffix.all('grid-column', 'start', 'end')]
-};
 
 module.exports = {
   extends: 'stylelint-config-sass-guidelines',
@@ -60,23 +23,12 @@ module.exports = {
     'order/properties-alphabetical-order': null,
     'order/properties-order': [
       [
-        ...positioning,
-        ...display,
-        ...grid.parent,
-        ...grid.children,
-        'flex-direction',
-        'flex-wrap',
-        'flex-flow',
-        'justify-content',
-        'align-items',
-        'align-content',
-        'order',
-        'flex',
-        'flex-grow',
-        'flex-shrink',
-        'flex-basis',
-        'align-self',
-        ...boxModel,
+        // ...positioning,
+        // ...display,
+        // ...grid.parent,
+        // ...grid.children,
+
+        // ...boxModel,
         'background',
         'background-color',
         'background-image',

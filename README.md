@@ -7,3 +7,18 @@
 [![Build Status](https://travis-ci.org/Digznav/stylelint-config-idiomatic-sass.svg?branch=v0.1.0)](https://travis-ci.org/Digznav/stylelint-config-idiomatic-sass)
 
 > Stylelint + Idiomatic CSS + SASS Guidelines = 🔥
+
+
+<!-- 
+position
+existence
+box model
+floatw
+flexbox/grid/column
+transform
+visibility
+style
+interactivity
+
+Layout mode
+ -->

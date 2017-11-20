@@ -1,20 +1,28 @@
 const { assert } = require('chai');
 
-const css = require('./helpers');
+const { positioning, boxModel, grid, flexbox, gridFlexShared } = require('./css-order');
 
 describe('CSS', () => {
   describe('Positioning', () => {
     it('should have the same css properties', () => {
-      const positioningRaw = ['position', 'z-index', 'top', 'right', 'bottom', 'left', 'float', 'clear'];
-      const positioning = ['position', 'z-index', ...css.trbl(), 'float', 'clear'];
+      const positioningExpected = [
+        'position',
+        'z-index',
+        'top',
+        'right',
+        'bottom',
+        'left',
+        'float',
+        'clear'
+      ];
 
-      assert.deepEqual(positioningRaw, positioning);
+      assert.deepEqual(positioningExpected, positioning);
     });
   });
 
   describe('Box model', () => {
     it('should have the same css properties', () => {
-      const boxModelRaw = [
+      const boxModelExpected = [
         'overflow',
         'overflow-x',
         'overflow-y',
@@ -72,26 +80,14 @@ describe('CSS', () => {
         'outline-color',
         'outline-offset'
       ];
-      const boxModel = [
-        ...css.suffix.all('overflow', 'x', 'y'),
-        'box-sizing',
-        ...css.prefix.all('width', 'min', 'max'),
-        ...css.prefix.all('height', 'min', 'max'),
-        ...css.trbl('padding'),
-        ...css.border(),
-        ...css.midfix.all('border-radius', 'top-left', 'top-right', 'bottom-right', 'bottom-left'),
-        ...css.suffix.all('border-image', 'source', 'slice', 'width', 'outset', 'repeat'),
-        ...css.trbl('margin'),
-        ...css.suffix.all('outline', 'width', 'style', 'color', 'offset')
-      ];
 
-      assert.deepEqual(boxModelRaw, boxModel);
+      assert.deepEqual(boxModelExpected, boxModel);
     });
   });
 
   describe('Grid', () => {
     it('should have the same css properties', () => {
-      const gridRaw = {
+      const gridExpected = {
         parent: [
           'grid',
           'grid-template',
@@ -105,19 +101,58 @@ describe('CSS', () => {
           'grid-auto-columns',
           'grid-auto-flow'
         ],
-        children: ['grid-area', 'grid-row', 'grid-row-start', 'grid-row-end', 'grid-column', 'grid-column-start', 'grid-column-end']
-      };
-      const grid = {
-        parent: [
-          'grid',
-          ...css.suffix.all('grid-template', 'rows', 'columns', 'areas'),
-          ...css.midfix.all('grid-gap', 'row', 'column'),
-          ...css.suffix.get('grid-auto', 'rows', 'columns', 'flow')
-        ],
-        children: ['grid-area', ...css.suffix.all('grid-row', 'start', 'end'), ...css.suffix.all('grid-column', 'start', 'end')]
+        children: [
+          'grid-area',
+          'grid-row',
+          'grid-row-start',
+          'grid-row-end',
+          'grid-column',
+          'grid-column-start',
+          'grid-column-end'
+        ]
       };
 
-      assert.deepEqual(gridRaw, grid);
+      assert.deepEqual(gridExpected, grid);
     });
+  });
+
+  describe('Flexbox', () => {
+    it('should have the same css properties', () => {
+      const flexboxExpected = {
+        parent: [
+          'flex-flow',
+          'flex-direction',
+          'flex-wrap'
+        ],
+        children: [
+          'order',
+          'flex',
+          'flex-grow',
+          'flex-shrink',
+          'flex-basis',
+        ]
+      };
+
+      assert.deepEqual(flexboxExpected, flexbox);
+    });
+  });
+
+  describe('Shared properties for Grid and Flexbox', () => {
+    it('should have the same css properties', () => {
+      const gridFlexSharedExpected = {
+        parent: [
+          'justify-items',
+          'justify-content',
+          'align-items',
+          'align-content'
+        ],
+        children: [
+          'justify-self',
+          'align-self'
+        ]
+      };
+
+      assert.deepEqual(gridFlexSharedExpected, gridFlexShared);
+    })
   });
 });
