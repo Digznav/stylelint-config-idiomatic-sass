@@ -1,4 +1,3 @@
-
 module.exports = {
   prefix: {
     get(property, ...prefixes) {

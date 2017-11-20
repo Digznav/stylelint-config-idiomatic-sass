@@ -10,7 +10,7 @@ const localBins = {
 
 module.exports = {
   scripts: {
-    test: 'node test.js',
+    test: 'mocha',
 
     js: {
       format: `${localBins.prettier} --single-quote --print-width=140 --parser=flow "**/*.js"`,
