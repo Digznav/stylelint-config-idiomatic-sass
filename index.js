@@ -22,12 +22,6 @@ module.exports = {
     'order/properties-alphabetical-order': null,
     'order/properties-order': [
       [
-        // ...positioning,
-        // ...display,
-        // ...grid.parent,
-        // ...grid.children,
-
-        // ...boxModel,
         'background',
         'background-color',
         'background-image',

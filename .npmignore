@@ -3,4 +3,4 @@
 .nvmrc
 package-lock.json
 package-scripts.js
-test.js
+*test*

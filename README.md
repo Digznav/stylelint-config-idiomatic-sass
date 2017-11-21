@@ -10,11 +10,11 @@
 
 
 <!-- 
-position
-existence
+positioning (float)
+display (existence)
 box model
-floatw
-flexbox/grid/column
+layout (grid/flexbox)
+column
 transform
 visibility
 style
