@@ -15,10 +15,12 @@ display
 box model
 layout
 style
+content
+  - font
+  - text
+  - list
 
 column
 transform
-visibility
 interactivity
-
  -->

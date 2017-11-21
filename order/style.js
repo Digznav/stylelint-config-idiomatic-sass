@@ -2,7 +2,9 @@ const css = require('../helpers');
 
 module.exports = [
   ...css.suffix.all(
+    // Shorthand
     'background',
+    // Extended
     'color',
     'image',
     'repeat',
@@ -14,5 +16,6 @@ module.exports = [
     'clip',
     'attachment'
   ),
-  'color'
-]
+  'color',
+  'box-shadow'
+];

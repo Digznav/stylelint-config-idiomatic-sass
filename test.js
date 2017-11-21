@@ -5,6 +5,7 @@ const display = require('./order/display');
 const boxModel = require('./order/box-model');
 const layout = require('./order/layout');
 const style = require('./order/style');
+const content = require('./order/content');
 
 describe('CSS', () => {
   describe('Order', () => {
@@ -139,7 +140,57 @@ describe('CSS', () => {
         'background-origin',
         'background-clip',
         'background-attachment',
-        'color'
+        'color',
+        'box-shadow',
+
+        // Font
+        'font',
+        'font-style',
+        'font-weight',
+        'font-stretch',
+        'font-size',
+        'line-height',
+        'font-family',
+        'font-variant',
+        'font-variant-caps',
+        'font-variant-numeric',
+        'font-variant-alternates',
+        'font-variant-ligatures',
+        'font-variant-east-asian',
+        'font-size-adjust',
+        'font-effect',
+        'font-emphasize',
+        'font-emphasize-position',
+        'font-emphasize-style',
+        'font-smooth',
+        'text-align',
+        'text-align-last',
+        'text-indent',
+        'text-decoration',
+        'text-transform',
+        'text-outline',
+        'text-shadow',
+        'text-wrap',
+        'text-overflow',
+        'text-overflow-ellipsis',
+        'text-overflow-mode',
+        'text-emphasis',
+        'text-emphasis-color',
+        'text-emphasis-style',
+        'text-emphasis-position',
+        'text-justify',
+        'letter-spacing',
+        'tab-size',
+        'word-spacing',
+        'word-wrap',
+        'word-break',
+        'overflow-wrap',
+        'white-space',
+        'hyphens',
+        'list-style',
+        'list-style-type',
+        'list-style-position',
+        'list-style-image'
       ];
 
       assert.deepEqual(
@@ -150,7 +201,12 @@ describe('CSS', () => {
           ...layout.grid,
           ...layout.flexbox,
           ...layout.shared,
-          ...style
+          ...style,
+          ...content.font.base,
+          ...content.font.variant,
+          ...content.font.special,
+          ...content.text,
+          ...content.list
         ],
         desiredOrder
       );

@@ -1,5 +1,1 @@
-module.exports = [
-  'display',
-  'visibility',
-  'opacity'
-];
+module.exports = ['display', 'visibility', 'opacity'];

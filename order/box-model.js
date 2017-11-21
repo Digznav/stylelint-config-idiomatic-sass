@@ -7,8 +7,33 @@ module.exports = [
   ...css.prefix.all('height', 'min', 'max'),
   ...css.trbl('padding'),
   ...css.border(),
-  ...css.midfix.all('border-radius', 'top-left', 'top-right', 'bottom-right', 'bottom-left'),
-  ...css.suffix.all('border-image', 'source', 'slice', 'width', 'outset', 'repeat'),
+  ...css.midfix.all(
+    // Shorthand
+    'border-radius',
+    // Extended
+    'top-left',
+    'top-right',
+    'bottom-right',
+    'bottom-left'
+  ),
+  ...css.suffix.all(
+    // Shorthand
+    'border-image',
+    // Extended
+    'source',
+    'slice',
+    'width',
+    'outset',
+    'repeat'
+  ),
   ...css.trbl('margin'),
-  ...css.suffix.all('outline', 'width', 'style', 'color', 'offset')
+  ...css.suffix.all(
+    // Shorthand
+    'outline',
+    // Extended
+    'width',
+    'style',
+    'color',
+    'offset'
+  )
 ];
