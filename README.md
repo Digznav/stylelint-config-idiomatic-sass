@@ -10,15 +10,15 @@
 
 
 <!-- 
-positioning (float)
-display (existence)
+positioning
+display
 box model
-layout (grid/flexbox)
+layout
+style
+
 column
 transform
 visibility
-style
 interactivity
 
-Layout mode
  -->

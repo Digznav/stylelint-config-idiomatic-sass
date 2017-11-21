@@ -22,18 +22,6 @@ module.exports = {
     'order/properties-alphabetical-order': null,
     'order/properties-order': [
       [
-        'background',
-        'background-color',
-        'background-image',
-        'background-repeat',
-        'background-position',
-        'background-position-x',
-        'background-position-y',
-        'background-size',
-        'background-origin',
-        'background-clip',
-        'background-attachment',
-        'color',
         'font',
         'font-family',
         'font-size',

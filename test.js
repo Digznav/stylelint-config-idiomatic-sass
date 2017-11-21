@@ -4,6 +4,7 @@ const positioning = require('./order/positioning');
 const display = require('./order/display');
 const boxModel = require('./order/box-model');
 const layout = require('./order/layout');
+const style = require('./order/style');
 
 describe('CSS', () => {
   describe('Order', () => {
@@ -124,7 +125,21 @@ describe('CSS', () => {
         'align-content',
         // Children
         'justify-self',
-        'align-self'
+        'align-self',
+
+        // Style
+        'background',
+        'background-color',
+        'background-image',
+        'background-repeat',
+        'background-position',
+        'background-position-x',
+        'background-position-y',
+        'background-size',
+        'background-origin',
+        'background-clip',
+        'background-attachment',
+        'color'
       ];
 
       assert.deepEqual(
@@ -134,7 +149,8 @@ describe('CSS', () => {
           ...boxModel,
           ...layout.grid,
           ...layout.flexbox,
-          ...layout.shared
+          ...layout.shared,
+          ...style
         ],
         desiredOrder
       );
