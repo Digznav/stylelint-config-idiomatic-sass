@@ -22,7 +22,6 @@ module.exports = {
     'order/properties-alphabetical-order': null,
     'order/properties-order': [
       [
-
         'columns',
         'column-gap',
         'column-fill',

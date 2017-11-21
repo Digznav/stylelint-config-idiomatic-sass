@@ -23,38 +23,38 @@ module.exports = {
       'ligatures',
       'east-asian'
     ),
-    special: [
-      'font-size-adjust',
-      'font-effect',
-      'font-emphasize',
-      'font-emphasize-position',
-      'font-emphasize-style',
-      'font-smooth'
-    ]
+    special: ['font-size-adjust', 'font-smooth']
   },
 
   text: [
     'text-align',
     'text-align-last',
     'text-indent',
-    'text-decoration',
+    ...css.suffix.all(
+      // Shorthand
+      'text-decoration',
+      // Extended
+      'color',
+      'style',
+      'line'
+    ),
     'text-transform',
-    'text-outline',
     'text-shadow',
-    'text-wrap',
     'text-overflow',
-    'text-overflow-ellipsis',
-    'text-overflow-mode',
-    'text-emphasis',
-    'text-emphasis-color',
-    'text-emphasis-style',
-    'text-emphasis-position',
+    ...css.suffix.all(
+      // Shorthand
+      'text-emphasis',
+      // Extended
+      'color',
+      'style',
+      'position'
+    ),
     'text-justify',
     'letter-spacing',
     'tab-size',
     'word-spacing',
-    'word-wrap',
     'word-break',
+    'word-wrap',
     'overflow-wrap',
     'white-space',
     'hyphens'
