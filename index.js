@@ -1,3 +1,11 @@
+const positioning = require('./order/positioning');
+const display = require('./order/display');
+const boxModel = require('./order/box-model');
+const layout = require('./order/layout');
+const style = require('./order/style');
+const content = require('./order/content');
+const effects = require('./order/effects');
+
 module.exports = {
   extends: 'stylelint-config-sass-guidelines',
   rules: {
@@ -22,40 +30,23 @@ module.exports = {
     'order/properties-alphabetical-order': null,
     'order/properties-order': [
       [
-        'columns',
-        'column-gap',
-        'column-fill',
-        'column-rule',
-        'column-span',
-        'column-count',
-        'column-width',
-
-        'transition',
-        'transition-property',
-        'transition-duration',
-        'transition-timing-function',
-        'transition-delay',
-        'transform',
-        'transform-origin',
-        'transform-style',
-        'animation',
-        'animation-duration',
-        'animation-timing-function',
-        'animation-delay',
-        'animation-iteration-count',
-        'animation-direction',
-        'animation-fill-mode',
-        'animation-play-state',
-        'animation-name',
-
-        'cursor',
-        'content',
-        'quotes',
-        'resize',
-        'clip',
-        'zoom',
-        'user-select',
-        'pointer-events'
+        ...positioning,
+        ...display,
+        ...boxModel,
+        ...layout.grid,
+        ...layout.flexbox,
+        ...layout.shared,
+        ...style,
+        ...content.font.base,
+        ...content.font.variant,
+        ...content.font.special,
+        ...content.text,
+        ...content.list,
+        ...content.table,
+        ...content.columns,
+        ...effects.transition,
+        ...effects.transform,
+        ...effects.animation
       ],
       {
         unspecified: 'bottom'
