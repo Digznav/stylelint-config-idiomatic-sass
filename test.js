@@ -143,6 +143,7 @@ describe('CSS', () => {
         'color',
         'box-shadow',
 
+        // Content
         // Font
         'font',
         'font-style',
@@ -159,6 +160,8 @@ describe('CSS', () => {
         'font-variant-east-asian',
         'font-size-adjust',
         'font-smooth',
+
+        // Text
         'text-align',
         'text-align-last',
         'text-indent',
@@ -182,10 +185,23 @@ describe('CSS', () => {
         'overflow-wrap',
         'white-space',
         'hyphens',
+        'hanging-punctuation',
+
+        // List
         'list-style',
         'list-style-type',
         'list-style-position',
-        'list-style-image'
+        'list-style-image',
+        'counter-reset',
+        'counter-increment',
+
+        // Table
+        'table-layout',
+        'empty-cells',
+        'caption-side',
+        'border-spacing',
+        'border-collapse',
+        'vertical-align'
       ];
 
       assert.deepEqual(
@@ -201,7 +217,8 @@ describe('CSS', () => {
           ...content.font.variant,
           ...content.font.special,
           ...content.text,
-          ...content.list
+          ...content.list,
+          ...content.table
         ],
         desiredOrder
       );

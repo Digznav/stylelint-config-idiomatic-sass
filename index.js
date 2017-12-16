@@ -48,13 +48,6 @@ module.exports = {
         'animation-play-state',
         'animation-name',
 
-        'table-layout',
-        'empty-cells',
-        'caption-side',
-        'border-spacing',
-        'border-collapse',
-        'vertical-align',
-
         'cursor',
         'content',
         'quotes',

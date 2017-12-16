@@ -11,7 +11,6 @@ const localBins = {
 module.exports = {
   scripts: {
     test: 'mocha',
-
     js: {
       format: `${localBins.prettier} --single-quote --print-width=140 --parser=flow "**/*.js"`,
       lint: {
@@ -20,7 +19,6 @@ module.exports = {
         strict: localBins.eslint
       }
     },
-
     sass: {
       format: `${localBins.stylelint} --fix`,
       lint: {
@@ -28,9 +26,7 @@ module.exports = {
         strict: `${localBins.stylelint}`
       }
     },
-
     link: serialize(serialize.nps('js.lint.strict'), 'npm link'),
-
     bump: serialize(serialize.nps('js.lint.strict'), 'npm publish')
   }
 };

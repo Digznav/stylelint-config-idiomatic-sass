@@ -57,15 +57,29 @@ module.exports = {
     'word-wrap',
     'overflow-wrap',
     'white-space',
-    'hyphens'
+    'hyphens',
+    'hanging-punctuation'
   ],
 
-  list: css.suffix.all(
-    // Shorthand
-    'list-style',
-    // Extended
-    'type',
-    'position',
-    'image'
-  )
+  list: [
+    ...css.suffix.all(
+      // Shorthand
+      'list-style',
+      // Extended
+      'type',
+      'position',
+      'image'
+    ),
+    'counter-reset',
+    'counter-increment'
+  ],
+
+  table: [
+    'table-layout',
+    'empty-cells',
+    'caption-side',
+    'border-spacing',
+    'border-collapse',
+    'vertical-align'
+  ]
 };
