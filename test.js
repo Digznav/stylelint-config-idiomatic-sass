@@ -6,6 +6,7 @@ const boxModel = require('./order/box-model');
 const layout = require('./order/layout');
 const style = require('./order/style');
 const content = require('./order/content');
+const effects = require('./order/effects');
 
 describe('CSS', () => {
   describe('Order', () => {
@@ -197,11 +198,45 @@ describe('CSS', () => {
 
         // Table
         'table-layout',
-        'empty-cells',
-        'caption-side',
         'border-spacing',
         'border-collapse',
-        'vertical-align'
+        'vertical-align',
+        'empty-cells',
+        'caption-side',
+
+        // Columns
+        'columns',
+        'column-width',
+        'column-count',
+        'column-gap',
+        'column-rule',
+        'column-span',
+        'column-fill',
+
+        // Effects
+        // Transition
+        'transition',
+        'transition-property',
+        'transition-duration',
+        'transition-timing-function',
+        'transition-delay',
+
+        // Transform
+        'transform',
+        'transform-box',
+        'transform-origin',
+        'transform-style',
+
+        // Animation
+        'animation',
+        'animation-name',
+        'animation-duration',
+        'animation-timing-function',
+        'animation-delay',
+        'animation-iteration-count',
+        'animation-direction',
+        'animation-fill-mode',
+        'animation-play-state'
       ];
 
       assert.deepEqual(
@@ -218,7 +253,11 @@ describe('CSS', () => {
           ...content.font.special,
           ...content.text,
           ...content.list,
-          ...content.table
+          ...content.table,
+          ...content.columns,
+          ...effects.transition,
+          ...effects.transform,
+          ...effects.animation
         ],
         desiredOrder
       );

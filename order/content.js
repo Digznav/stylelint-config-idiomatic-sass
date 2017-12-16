@@ -76,10 +76,20 @@ module.exports = {
 
   table: [
     'table-layout',
-    'empty-cells',
-    'caption-side',
     'border-spacing',
     'border-collapse',
-    'vertical-align'
+    'vertical-align',
+    'empty-cells',
+    'caption-side'
+  ],
+
+  columns: [
+    'columns',
+    'column-width',
+    'column-count',
+    'column-gap',
+    'column-rule',
+    'column-span',
+    'column-fill'
   ]
 };
