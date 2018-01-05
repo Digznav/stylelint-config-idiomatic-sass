@@ -2,3 +2,5 @@
 .eslintrc.json
 .nvmrc
 package-lock.json
+package-scripts.js
+*test*

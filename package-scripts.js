@@ -1,4 +1,4 @@
-const npsUtils = require('nps-utils');
+const npsUtils = require('nps-utils'); // eslint-disable-line import/no-extraneous-dependencies
 
 const serialize = npsUtils.series;
 
@@ -10,8 +10,7 @@ const localBins = {
 
 module.exports = {
   scripts: {
-    test: 'echo "Error: no test specified" && exit 1',
-
+    test: 'mocha',
     js: {
       format: `${localBins.prettier} --single-quote --print-width=140 --parser=flow "**/*.js"`,
       lint: {
@@ -20,7 +19,6 @@ module.exports = {
         strict: localBins.eslint
       }
     },
-
     sass: {
       format: `${localBins.stylelint} --fix`,
       lint: {
@@ -28,9 +26,7 @@ module.exports = {
         strict: `${localBins.stylelint}`
       }
     },
-
     link: serialize(serialize.nps('js.lint.strict'), 'npm link'),
-
     bump: serialize(serialize.nps('js.lint.strict'), 'npm publish')
   }
 };
