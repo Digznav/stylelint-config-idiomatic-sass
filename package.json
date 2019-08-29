@@ -2,31 +2,35 @@
   "name": "stylelint-config-idiomatic-sass",
   "version": "1.0.0",
   "description": "stylelint + idiomatic css + sass guidelines = 🔥",
-  "main": "index.js",
-  "scripts": {
-    "start": "nps",
-    "test": "nps test"
+  "keywords": [
+    "guidelines",
+    "idomatic-css",
+    "order",
+    "sass",
+    "scss",
+    "stylelint",
+    "stylelint-config",
+    "stylelint-scss"
+  ],
+  "homepage": "https://github.com/Digznav/stylelint-config-idiomatic-sass#readme",
+  "bugs": {
+    "url": "https://github.com/Digznav/stylelint-config-idiomatic-sass/issues"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Digznav/stylelint-config-idiomatic-sass.git"
   },
-  "keywords": [
-    "stylelint",
-    "stylelint-config",
-    "stylelint-scss",
-    "idomatic-css",
-    "order",
-    "scss",
-    "sass",
-    "guidelines"
-  ],
-  "author": "Diego Miguel <digznav@gmail.com> (https://github.com/Digznav)",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/Digznav/stylelint-config-idiomatic-sass/issues"
+  "author": "Diego Miguel <digznav@gmail.com> (https://github.com/Digznav)",
+  "main": "index.js",
+  "scripts": {
+    "start": "nps",
+    "test": "nps test"
   },
-  "homepage": "https://github.com/Digznav/stylelint-config-idiomatic-sass#readme",
+  "dependencies": {
+    "stylelint": "^8.2.0",
+    "stylelint-config-sass-guidelines": "^3.1.0"
+  },
   "devDependencies": {
     "babel-eslint": "^8.0.2",
     "chai": "^4.1.2",
@@ -43,10 +47,6 @@
     "nps": "^5.7.1",
     "nps-utils": "^1.5.0",
     "prettier": "^1.8.2"
-  },
-  "dependencies": {
-    "stylelint": "^8.2.0",
-    "stylelint-config-sass-guidelines": "^3.1.0"
   },
   "engines": {
     "node": ">=8",
